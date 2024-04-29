@@ -18,18 +18,24 @@ public class Sample1ParellelTest {
 
 	@Test
 	public void Test1() {
-		System.out.println("sample1ParellelTest1");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample1ParellelTest1..."+id);
 	}
 
 	@Test
 	public void Test2() {
-		System.out.println("sample1ParellelTest2");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample1ParellelTest2..."+id);
 	}
 	@Test
 	public void Test3() {
-		System.out.println("sample1ParellelTest3");
-	}@Test
+		long id=Thread.currentThread().getId();
+		System.out.println("sample1ParellelTest3..."+id);
+		
+	}
+	@Test(invocationCount=6,threadPoolSize =3, timeOut =2000)
 	public void Test4() {
-		System.out.println("sample1ParellelTest4");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample1ParellelTest4..."+id);
 	}	
 }

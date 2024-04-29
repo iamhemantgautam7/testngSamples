@@ -1,51 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="13" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-26T06:36:09 GMT" name="SampleSuite" finished-at="2024-04-26T06:36:09 GMT" duration-ms="77">
+  <suite started-at="2024-04-29T18:47:18 GMT" name="Default suite" finished-at="2024-04-29T18:47:38 GMT" duration-ms="20439">
     <groups>
-      <group name="feature2">
-        <method signature="Sample1Test.Test2()[pri:0, instance:testngScripts.Sample1Test@26275bef]" name="Test2" class="testngScripts.Sample1Test"/>
-        <method signature="Sample2Test.Test2()[pri:0, instance:testngScripts.Sample2Test@7690781]" name="Test2" class="testngScripts.Sample2Test"/>
-      </group> <!-- feature2 -->
-      <group name="feature3">
-        <method signature="Sample1Test.Test3()[pri:0, instance:testngScripts.Sample1Test@26275bef]" name="Test3" class="testngScripts.Sample1Test"/>
-        <method signature="Sample2Test.Test3()[pri:0, instance:testngScripts.Sample2Test@7690781]" name="Test3" class="testngScripts.Sample2Test"/>
-      </group> <!-- feature3 -->
-      <group name="feature1">
-        <method signature="Sample1Test.Test1()[pri:0, instance:testngScripts.Sample1Test@26275bef]" name="Test1" class="testngScripts.Sample1Test"/>
-        <method signature="Sample2Test.Test1()[pri:0, instance:testngScripts.Sample2Test@7690781]" name="Test1" class="testngScripts.Sample2Test"/>
-      </group> <!-- feature1 -->
+      <group name="desktop">
+        <method signature="GooglePagetest.javaSearchTest()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" name="javaSearchTest" class="testngScripts.GooglePagetest"/>
+      </group> <!-- desktop -->
     </groups>
-    <test started-at="2024-04-26T06:36:09 GMT" name="ModuleOneTest" finished-at="2024-04-26T06:36:09 GMT" duration-ms="77">
-      <class name="testngScripts.Sample2Test">
-        <test-method signature="Test1()[pri:0, instance:testngScripts.Sample2Test@7690781]" started-at="2024-04-26T06:36:09 GMT" name="Test1" finished-at="2024-04-26T06:36:09 GMT" duration-ms="1" status="PASS">
+    <test started-at="2024-04-29T18:47:18 GMT" name="Default test" finished-at="2024-04-29T18:47:38 GMT" duration-ms="20439">
+      <class name="testngScripts.GooglePagetest">
+        <test-method is-config="true" signature="initExtent()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:18 GMT" name="initExtent" finished-at="2024-04-29T18:47:18 GMT" duration-ms="392" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test1 -->
-        <test-method signature="Test2()[pri:0, instance:testngScripts.Sample2Test@7690781]" started-at="2024-04-26T06:36:09 GMT" name="Test2" finished-at="2024-04-26T06:36:09 GMT" duration-ms="1" status="PASS">
+        </test-method> <!-- initExtent -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:18 GMT" name="setup" finished-at="2024-04-29T18:47:21 GMT" duration-ms="2513" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test3()[pri:0, instance:testngScripts.Sample2Test@7690781]" started-at="2024-04-26T06:36:09 GMT" name="Test3" finished-at="2024-04-26T06:36:09 GMT" duration-ms="1" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="appiumSearchTest()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:21 GMT" name="appiumSearchTest" finished-at="2024-04-29T18:47:23 GMT" duration-ms="2363" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test3 -->
-      </class> <!-- testngScripts.Sample2Test -->
-      <class name="testngScripts.Sample1Test">
-        <test-method signature="Test1()[pri:0, instance:testngScripts.Sample1Test@26275bef]" started-at="2024-04-26T06:36:09 GMT" name="Test1" finished-at="2024-04-26T06:36:09 GMT" duration-ms="9" status="PASS">
+        </test-method> <!-- appiumSearchTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:23 GMT" name="tearDown" finished-at="2024-04-29T18:47:23 GMT" duration-ms="144" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test1 -->
-        <test-method signature="Test2()[pri:0, instance:testngScripts.Sample1Test@26275bef]" started-at="2024-04-26T06:36:09 GMT" name="Test2" finished-at="2024-04-26T06:36:09 GMT" duration-ms="3" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:23 GMT" name="setup" finished-at="2024-04-29T18:47:25 GMT" duration-ms="1809" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method signature="Test3()[pri:0, instance:testngScripts.Sample1Test@26275bef]" started-at="2024-04-26T06:36:09 GMT" name="Test3" finished-at="2024-04-26T06:36:09 GMT" duration-ms="2" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="cucumberSearchTest()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:25 GMT" name="cucumberSearchTest" finished-at="2024-04-29T18:47:28 GMT" duration-ms="3237" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test3 -->
-      </class> <!-- testngScripts.Sample1Test -->
-    </test> <!-- ModuleOneTest -->
-  </suite> <!-- SampleSuite -->
+        </test-method> <!-- cucumberSearchTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:28 GMT" name="tearDown" finished-at="2024-04-29T18:47:29 GMT" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:29 GMT" name="setup" finished-at="2024-04-29T18:47:30 GMT" duration-ms="1796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="javaSearchTest()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:30 GMT" name="javaSearchTest" finished-at="2024-04-29T18:47:33 GMT" duration-ms="2791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- javaSearchTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:33 GMT" name="tearDown" finished-at="2024-04-29T18:47:33 GMT" duration-ms="141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:33 GMT" name="setup" finished-at="2024-04-29T18:47:35 GMT" duration-ms="1747" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="seleniumSearchTest()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:35 GMT" name="seleniumSearchTest" finished-at="2024-04-29T18:47:38 GMT" duration-ms="2744" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Selenium Tutorial1 - Google Search] but found [Selenium Tutorial - Google Search]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Selenium Tutorial1 - Google Search] but found [Selenium Tutorial - Google Search]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at testngScripts.GooglePagetest.seleniumSearchTest(GooglePagetest.java:86)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- seleniumSearchTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:38 GMT" name="tearDown" finished-at="2024-04-29T18:47:38 GMT" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="finishExtent()[pri:0, instance:testngScripts.GooglePagetest@2abf4075]" started-at="2024-04-29T18:47:38 GMT" name="finishExtent" finished-at="2024-04-29T18:47:38 GMT" duration-ms="404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishExtent -->
+      </class> <!-- testngScripts.GooglePagetest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

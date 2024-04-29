@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SampleSuite">
+<suite name="SampleSuite" thread-count="2" parallel="classes" time-out="2000">
 
 
 
-  <test thread-count="5" name="ModuleOneTest">
-  
-  <groups>
-
-<define name = "SmokeTest">
-<include name= "feature1"/>
-<include name= "feature2"/>
-</define>
-
-<define name ="RegressionTest">
-<include name="feature1"/>
-<include name="feature2"/>
-<include name="feature3"/>
-</define>
-
-
-<run>
-<include name="RegressionTest"/>
-</run>
-
-</groups>
-
+  <test  name="ModuleOneTest">
 
     <classes>
-      <class name="testngScripts.GooglePagetest"/>
-      <class name="testngScripts.LoginPageTest"/>
-      <class name="testngScripts.Sample1Test"/>
-      <class name="testngScripts.Sample2Test"/>
+      <class name="parellelScripts.Sample1ParellelTest"/>
+      <class name="parellelScripts.Sample2ParellelTest"/>
     </classes>
   </test> <!-- ModuleOneTest -->
+  
+  
+    <test  name="ModuleTwoTest">
+
+    <classes>
+      <class name="parellelScripts.Sample3ParellelTest"/>
+    </classes>
+  </test> <!-- ModuleTwoTest -->
+  
   
   
 </suite> <!-- SampleSuite -->

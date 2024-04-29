@@ -8,15 +8,36 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 public class GooglePagetest {
 
+	
 	WebDriver driver;
-
+	ExtentReports extentReports;
+	ExtentSparkReporter spark;
+	ExtentTest extentTest;
+	
+	@BeforeTest
+	public void initExtent() {
+		extentReports = new ExtentReports();
+		spark = new ExtentSparkReporter("test-output/SparkReport.html");
+		extentReports.attachReporter(spark);
+	}
+	
+	@AfterTest
+	public void finishExtent() {
+		extentReports.flush();
+	}
+	
 	@BeforeMethod
 	public void setup() {
 
@@ -38,6 +59,8 @@ public class GooglePagetest {
 	//@Test(alwaysRun=true, dependsOnMethods="seleniumSearchTest") //- this will be depends on Selenium method and always run wont skip this test even though selenium test is failed
 	@Test(groups="desktop")
 	public void javaSearchTest() {
+		
+		extentTest = extentReports.createTest("Java Search Test");
 
 		driver.get("https://www.google.com/");
 		SoftAssert softAssert = new SoftAssert();
@@ -54,7 +77,7 @@ public class GooglePagetest {
 
 	@Test
 	public void seleniumSearchTest() {
-
+		extentTest = extentReports.createTest("Selenium Search Test");
 		driver.get("https://www.google.com/");
 		WebElement srcBox = driver.findElement(By.id("APjFqb"));
 		srcBox.sendKeys("Selenium Tutorial");
@@ -65,6 +88,7 @@ public class GooglePagetest {
 
 	@Test
 	public void cucumberSearchTest() {
+		extentTest = extentReports.createTest("Cucumber Search Test");
 
 		driver.get("https://www.google.com/");
 		
@@ -78,6 +102,7 @@ public class GooglePagetest {
 	//@Test(enabled=false) to ignore the test case from execution 
 	@Test
 	public void appiumSearchTest() {
+		extentTest = extentReports.createTest("Appium Search Test");
 
 		driver.get("https://www.google.com/");
 		WebElement srcBox = driver.findElement(By.id("APjFqb"));

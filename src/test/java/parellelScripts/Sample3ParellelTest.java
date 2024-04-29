@@ -18,18 +18,22 @@ public class Sample3ParellelTest {
 
 	@Test
 	public void Test1() {
-		System.out.println("sample3ParellelTest1");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample3ParellelTest1..."+id);
 	}
 
 	@Test
 	public void Test2() {
-		System.out.println("sample3ParellelTest2");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample3ParellelTest2..."+id);
 	}
 	@Test
 	public void Test3() {
-		System.out.println("sample3ParellelTest3");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample3ParellelTest3..."+id);
 	}@Test
 	public void Test4() {
-		System.out.println("sample3ParellelTest4");
+		long id=Thread.currentThread().getId();
+		System.out.println("sample3ParellelTest4..."+id);
 	}	
 }

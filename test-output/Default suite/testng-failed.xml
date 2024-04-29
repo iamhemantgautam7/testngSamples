@@ -5,8 +5,9 @@
     <classes>
       <class name="testngScripts.GooglePagetest">
         <methods>
+          <include name="initExtent"/>
+          <include name="finishExtent"/>
           <include name="setup"/>
-          <include name="appiumSearchTest"/>
           <include name="seleniumSearchTest"/>
           <include name="tearDown"/>
         </methods>
