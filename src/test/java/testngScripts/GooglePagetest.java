@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +17,12 @@ import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.ViewName;
+
+import commonUtils.Utility;
 
 public class GooglePagetest {
 
@@ -29,12 +35,15 @@ public class GooglePagetest {
 	@BeforeTest
 	public void initExtent() {
 		extentReports = new ExtentReports();
-		spark = new ExtentSparkReporter("test-output/SparkReport.html");
+		spark = new ExtentSparkReporter("test-output/SparkReport.html").viewConfigurer().viewOrder().as(new ViewName[]
+				{ViewName.DASHBOARD, ViewName.TEST,ViewName.AUTHOR,ViewName.DEVICE,ViewName.LOG}).apply();		
+		
 		extentReports.attachReporter(spark);
 	}
 	
 	@AfterTest
 	public void finishExtent() {
+		
 		extentReports.flush();
 	}
 	
@@ -52,7 +61,19 @@ public class GooglePagetest {
 	}
 
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown(ITestResult result) {
+		extentTest.assignAuthor("Hemant Gautam")
+		.assignCategory("Regression")
+		.assignDevice(System.getProperty("os.name"))
+		.assignDevice(System.getProperty("os.version"));
+		if(result.getStatus()==ITestResult.FAILURE) {
+			extentTest.log(Status.FAIL, result.getThrowable().getMessage());
+			String strPath = Utility.getScreenshotPath(driver);
+		extentTest.fail(MediaEntityBuilder.createScreenCaptureFromPath(strPath).build());
+		}
+		else if(ITestResult.SKIP==result.getStatus()) {
+			extentTest.log(Status.SKIP, result.getThrowable().getMessage());
+		}
 		driver.close();
 	}
 
@@ -75,7 +96,7 @@ public class GooglePagetest {
 	//	softAssert.assertAll();
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyserImpl.class)
 	public void seleniumSearchTest() {
 		extentTest = extentReports.createTest("Selenium Search Test");
 		driver.get("https://www.google.com/");
