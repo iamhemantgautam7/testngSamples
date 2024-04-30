@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testngScripts.GooglePagetest">
+      <class name="testngScripts.ExternalDataDrivenExcel">
         <methods>
-          <include name="initExtent"/>
-          <include name="finishExtent"/>
+          <include name="initSetup"/>
           <include name="setup"/>
-          <include name="seleniumSearchTest"/>
-          <include name="tearDown"/>
+          <include name="validLogin"/>
         </methods>
-      </class> <!-- testngScripts.GooglePagetest -->
+      </class> <!-- testngScripts.ExternalDataDrivenExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

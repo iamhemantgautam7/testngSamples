@@ -24,6 +24,7 @@ public class LoginPageTest {
 	ExtentSparkReporter spark;
 	ExtentTest extentTest;
 	
+	
 	@BeforeTest
 	public void initExtent() {
 		extentReports = new ExtentReports();
